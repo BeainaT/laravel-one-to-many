@@ -23,6 +23,15 @@
           <textarea rows="10" class="form-control" id="post" name="content" value="{{old('content')}}"></textarea>
         </div>
         <div class="form-group">
+          <label for="category">Categoria</label>
+          <select class="form-control" id="category" name="category_id">
+            <option value="">Seleziona categoria</option>
+              @foreach ($categories as $category)
+                  <option value="{{$category->id}}" {{old('category_id') == $category->id ? 'selected' : ''}}>{{$category->name}}</option>
+              @endforeach
+          </select>
+        </div>
+        <div class="form-group">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="published" name="is_published">
             <label class="form-check-label" for="published">
