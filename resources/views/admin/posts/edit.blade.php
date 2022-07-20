@@ -22,7 +22,17 @@
         </div>
         <div class="form-group">
           <label for="post">Post</label>
-          <textarea rows="10" class="form-control" id="post" name="content" value="{{old('content', $post->content)}}"></textarea>
+          <textarea rows="10" class="form-control" id="post" name="content">{{old('content', $post->content)}}</textarea>
+        </div>
+        {{-- @dd($post->content) --}}
+        <div class="form-group">
+          <label for="category">Categoria</label>
+          <select class="form-control" id="category" name="category_id">
+            <option value="">Seleziona categoria</option>
+              @foreach ($categories as $category)
+                  <option value="{{$category->id}}" {{old('category_id', $post->category_id) == $category->id ? 'selected' : ''}}>{{$category->name}}</option>
+              @endforeach
+          </select>
         </div>
         <div class="form-group">
           <div class="form-check">
