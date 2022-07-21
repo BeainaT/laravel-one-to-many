@@ -36,6 +36,7 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('admin.posts.index')}}">Home</a>
+                            <a class="nav-link" href="{{route('admin.categories.index')}}">Category</a>
                         </li>
                     </ul>
 

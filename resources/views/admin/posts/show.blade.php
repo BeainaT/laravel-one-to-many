@@ -10,6 +10,12 @@
                     <div class="mb-3">
                         {{$post->content}}
                     </div>
+                    <div>
+                        @if ($post->category)
+                            <h5>categorie associate</h5>
+                            <span>{{$post->category->name}}</span>
+                        @endif
+                    </div>
                     <hr>
                     <div>
                         <a href="{{route('admin.posts.index')}}" class="btn btn-success">Tutti i post</a>
